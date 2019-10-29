@@ -1,18 +1,23 @@
 C++作业*（国庆节）
-#2.23（p51）
-
-答：若指针拥有一个合法值，则能将它用在条件表达式中。使用非法指针作为条件或者参与比较都会报错。
+#2.23
+问：给定指针p，你能知道它是否指向了一个合法的对象吗?如果能，叙述判断的思路；如果不能，也请说明原因。
+答：应该不能判断指针p是否指向了一个合法的对象，因为如果指针p没有被初始化，p存放的是一个随机的地址，如果p没有被合法的初始化，恶意存放了一个地址，随意访问会很危险的
 #2.24
-
+问：在下面这段代码中为什么p合法而 lp非法？
+int i = 42; void *p = &i; long *lp =&i;
 答：viod可用于存放任意类型数据的地址；而long只能用于存放long类型的数据。
 #2.25(p53)
-
-a).ip为int类型的指针，i为int类型，r为指针i的引用；
-b).i为int类型，ip为int类型指针；
-c).ip为int类型指针，ip2为int类型。
+问：试说明下列变量的类型和值。
+(a)int* p1,i,&r=i ;    p1是指向int类型的对象的指针，其值不确定，i是int类型的变量，r是int类型的引用，r是i的另一个名字
+(b)Int i,*ip =0;    i是int型的变量，ip是指向int型的空指针
+(c)Int* ip,ip2;     ip是指向int型的指针，其值不确定，ip2是int型的变量
 #2.35（p62）const 对象必须初始化
-
-整型常量-i、j2；整型常量引用-k、k2；整型-j；整型指针-p；
+i是int常量；
+j是int变量；
+k是i的引用；
+p是指向常量的指针；
+j2是int常量；
+k2是i的引用；
 
 #验证程序：
 
@@ -34,102 +39,126 @@ const auto j2 = i, &k2 = i;
 
 判断字符串大小： 代码：
 
+#include "pch.h"
 #include <iostream>
 #include <string>
-
 using std::string;
-using std::cin;
-using std::cout;
+using std:: cin;
+using std:: cout;
 using std::endl;
-
 int main()
 {
-    string a, b;
-    cout << "请输入a和b的值:" << endl;
-    while(cin >> s1 >> s2)
-    {
-    if (s1==s2)
-      cout << "a与b相等!" << endl;
-    else if(a > b)
-      cout << "字符串a比b长 ": << a << endl;
-    else 
-      cout << "字符串a比b短": << b << endl;
-    }
-    return 0;
- }
+	string s1;
+	string s2;
+	cout << "please input a string"<<endl;
+	cin >> s1;
+	//cout << endl;
+	cout << "please input another string"<<endl;
+	cin >> s2;
+	if (s1 == s2)
+		cout << "they are same";
+	else
+		cout << "they are diffierent";
 
-判断字符串等长：
 
-代码：
-
+	return 0;
+}
+判断字符串长度代码：
+#include "pch.h"
 #include <iostream>
 #include <string>
-
 using std::string;
-using std::cin;
-using std::cout;
+using std:: cin;
+using std:: cout;
 using std::endl;
-
 int main()
 {
-    string s1, s2;
-    while (cin >> s1 >> s2)
-    {
-        if (s1.size() == s2.size())
-        cout << "s1与s2等长"<<endl;
-        cout << "是 "<<endl;
-        else if(s1.size() > s2.size())
-        cout << "s1要长 : " << s1 << endl;
-        else 
-        cout << "s2要长 : " << s2 << endl;
-    }
-    return 0;
+	string s1;
+	string s2;
+	
+	cout << "please input a string"<<endl;
+	cin >> s1;
+	auto len1 = s1.size();
+	//cout << endl;
+	cout << "please input another string"<<endl;
+	cin >> s2;
+	auto len2 = s2.size();
+	if (len1 == len2)
+		cout << "等长"<<endl<<"长度是："<<len1;
+	else
+	{
+		cout << "不等长"<<endl;
+		if (len1 < len2)
+			len1 = len2;
+		cout << "较长的长度是：" << s1;
+	}
+
+
+	return 0;
 }
 
 #3.5(p81)
 
 #连接字符串并输出 代码：
 
-#include <iostream>
-
-using std::string;
-using std::cin;
-using std::cout;
-using std::endl;
-
+#include<iostream>
+#include<string>
+ 
+using namespace std;
+ 
+ 
 int main()
 {
-    string s1, s2，s;
-    s=s1;
-    while (cin >> s2)
+    string tmpString,longString;
+ 
+    cout << "请输入多个字符串：" << endl;
+    if( cin >> longString )  //读入第一个字符串
     {
-        s += s2;
+        while( cin >> tmpString )
+            longString += tmpString;
+        cout << "连接而成的大字符串：" << longString << endl;
     }
-    cout << s << endl;
+ 
+    else
+    {
+        cout << "输入有误" << endl;
+        return -1;
+    }
     return 0;
 }
 
 #空格分隔多字符串： 代码：
-
-#include <iostream>
-#include <string>
-
-using std::string;
-using std::cin;
-using std::cout;
-using std::endl;
-
+#include<iostream>
+#include<string>
+ 
+using namespace std;
+ 
+ 
 int main()
 {
-    string s1, s2;
-    while (cin >> s2)
-    s1 +=  " " + s2;
-    cout << s1 << endl;
+    string tmpString,longString;
+ 
+    cout << "请输入多个字符串：" << endl;
+    if( cin >> longString )  //读入第一个字符串
+    {
+        while( cin >> tmpString )
+        {
+            longString += " ";
+            longString += tmpString;
+        }
+        cout << "连接而成的大字符串：" << longString << endl;
+    }
+ 
+    else
+    {
+        cout << "输入有误" << endl;
+        return -1;
+    }
     return 0;
- } 
+}
 
-3.20（p94）
 
+#3.20
 #代码一：
 
 #include <iostream>
@@ -316,12 +345,12 @@ int main()
     return 0;
 }
 
-7.49（p266）
+#7.49（p266）
 
 (a).临时变量作用，调用后，丢弃s的值，i.combine()的结果保存到combine的返回值中；
 (b).调用后，s发生改变，i.combine（）结果给返回值；
 (c).s是const Sales_data&的，调用后，s值不发生改变,i.combine()的结果给返回值。
-7.58（p272）
+#7.58（p272）
 
 //example.h
 class Example{
@@ -335,4 +364,5 @@ static vector<double> vec(vecSize);//❌-改为static vector<double> vec；
 //example.C
 #include “example.h”
 Double Example::rate;//❌-改为Example::rate;
-Vector<double> Example::vec;//❌-改为Example::vec;
+Vector<double> Example::vec;//❌-改为Example::vec;	
+在类的内部，rate和vec的初始化是错误的，因为除了静态常量成员之外，其他静态成员不能在类的内部初始化。另外，example.c文件的两条语句也是错误的，在这里必须给出静态成员的初始值
