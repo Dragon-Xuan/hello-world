@@ -38,7 +38,7 @@ const auto j2 = i, &k2 = i;
 # 3.4（p81）
 
 判断字符串大小： 代码：
-
+'''
 #include "pch.h"
 #include <iostream>
 #include <string>
@@ -63,7 +63,9 @@ int main()
 
 	return 0;
 }
+'''
 判断字符串长度代码：
+'''
 #include "pch.h"
 #include <iostream>
 #include <string>
@@ -96,11 +98,11 @@ int main()
 
 	return 0;
 }
-
+'''
 # 3.5(p81)
 
 #连接字符串并输出 代码：
-
+'''
 #include<iostream>
 #include<string>
  
@@ -126,8 +128,9 @@ int main()
     }
     return 0;
 }
-
+'''
 #空格分隔多字符串： 代码：
+'''
 #include<iostream>
 #include<string>
  
@@ -157,10 +160,10 @@ int main()
     return 0;
 }
 
-
+'''
 # 3.20
 #代码一：
-
+'''
 #include <iostream>
 #include <vector>
 #include <string>
@@ -185,9 +188,9 @@ int main()
        cout << endl;
     return 0;
 }
-
+'''
 #代码二：
-
+'''
 #include <iostream>
 #include <string>
 #include <vector>
@@ -209,9 +212,9 @@ int main()
         cout << endl;
     return 0;
 }
-
+'''
 # 3.23（p99）
-
+'''
 #include <iostream>
 #include <vector>
 #include<cctype>
@@ -232,9 +235,9 @@ int main()
 	}
 	return 0;
 }
-
+'''
 # 6.20（p188）
-
+'''
 void exchange(int *q,int *p)
 {
   int t;
@@ -246,7 +249,7 @@ int n,m;
 cin>>n>>m;
 exchange(&n,&m);
 cout<<"n="<<n<<"m="<<m;
-
+'''
 # 6.19(p193)
 
 (b)合理；
@@ -267,7 +270,7 @@ cout<<"n="<<n<<"m="<<m;
 # 7.27（p249）
 
 代码：
-
+'''
 #include <iostream>
 #include <string>
 
@@ -344,14 +347,14 @@ int main()
     cout << "\n";  
     return 0;
 }
-
+'''
 # 7.49（p266）
 
 (a).临时变量作用，调用后，丢弃s的值，i.combine()的结果保存到combine的返回值中；
 (b).调用后，s发生改变，i.combine（）结果给返回值；
 (c).s是const Sales_data&的，调用后，s值不发生改变,i.combine()的结果给返回值。
 # 7.58（p272）
-
+'''
 //example.h
 class Example{
 public:
@@ -365,4 +368,5 @@ static vector<double> vec(vecSize);//❌-改为static vector<double> vec；
 #include “example.h”
 Double Example::rate;//❌-改为Example::rate;
 Vector<double> Example::vec;//❌-改为Example::vec;	
+'''
 在类的内部，rate和vec的初始化是错误的，因为除了静态常量成员之外，其他静态成员不能在类的内部初始化。另外，example.c文件的两条语句也是错误的，在这里必须给出静态成员的初始值
