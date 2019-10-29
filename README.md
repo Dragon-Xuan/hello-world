@@ -1,26 +1,26 @@
 C++作业*（国庆节）
 # 2.23
-问：给定指针p，你能知道它是否指向了一个合法的对象吗?如果能，叙述判断的思路；如果不能，也请说明原因。
-答：应该不能判断指针p是否指向了一个合法的对象，因为如果指针p没有被初始化，p存放的是一个随机的地址，如果p没有被合法的初始化，恶意存放了一个地址，随意访问会很危险的
+问：给定指针p，你能知道它是否指向了一个合法的对象吗?如果能，叙述判断的思路；如果不能，也请说明原因。   
+答：应该不能判断指针p是否指向了一个合法的对象，因为如果指针p没有被初始化，p存放的是一个随机的地址，如果p没有被合法的初始化，恶意存放了一个地址，随意访问会很危险的   
 # 2.24
-问：在下面这段代码中为什么p合法而 lp非法？
-int i = 42; void *p = &i; long *lp =&i;
-答：viod可用于存放任意类型数据的地址；而long只能用于存放long类型的数据。
+问：在下面这段代码中为什么p合法而 lp非法？   
+int i = 42; void *p = &i; long *lp =&i;    
+答：viod可用于存放任意类型数据的地址；而long只能用于存放long类型的数据。    
 # 2.25(p53)
-问：试说明下列变量的类型和值。
-(a)int* p1,i,&r=i ;    p1是指向int类型的对象的指针，其值不确定，i是int类型的变量，r是int类型的引用，r是i的另一个名字
-(b)Int i,*ip =0;    i是int型的变量，ip是指向int型的空指针
-(c)Int* ip,ip2;     ip是指向int型的指针，其值不确定，ip2是int型的变量
+问：试说明下列变量的类型和值。    
+(a)int* p1,i,&r=i ;    p1是指向int类型的对象的指针，其值不确定，i是int类型的变量，r是int类型的引用，r是i的另一个名字    
+(b)Int i,*ip =0;    i是int型的变量，ip是指向int型的空指针    
+(c)Int* ip,ip2;     ip是指向int型的指针，其值不确定，ip2是int型的变量   
 # 2.35（p62）const 对象必须初始化
-i是int常量；
-j是int变量；
-k是i的引用；
-p是指向常量的指针；
-j2是int常量；
-k2是i的引用；
+i是int常量；   
+j是int变量；    
+k是i的引用；    
+p是指向常量的指针；    
+j2是int常量；    
+k2是i的引用；    
 
 # 验证程序：
-
+```
 const int i = 42;i为常量
 auto j = i;//j为整形
 j = 0; //j为整型
@@ -34,11 +34,11 @@ auto *p = &i;
 const auto j2 = i, &k2 = i; 
 // j2 = 0; //失败，j2为整型常量，不可修改
 // k2 = 0; //失败，k2为、整型常量i的引用, 不可修改
-
+```
 # 3.4（p81）
 
 判断字符串大小： 代码：
-'''
+```
 #include "pch.h"
 #include <iostream>
 #include <string>
@@ -63,9 +63,9 @@ int main()
 
 	return 0;
 }
-'''
+```
 判断字符串长度代码：
-'''
+```
 #include "pch.h"
 #include <iostream>
 #include <string>
@@ -98,11 +98,11 @@ int main()
 
 	return 0;
 }
-'''
+```
 # 3.5(p81)
 
 #连接字符串并输出 代码：
-'''
+```
 #include<iostream>
 #include<string>
  
@@ -128,9 +128,9 @@ int main()
     }
     return 0;
 }
-'''
+```
 #空格分隔多字符串： 代码：
-'''
+```
 #include<iostream>
 #include<string>
  
@@ -160,10 +160,10 @@ int main()
     return 0;
 }
 
-'''
+```
 # 3.20
 #代码一：
-'''
+```
 #include <iostream>
 #include <vector>
 #include <string>
@@ -188,9 +188,9 @@ int main()
        cout << endl;
     return 0;
 }
-'''
+```
 #代码二：
-'''
+```
 #include <iostream>
 #include <string>
 #include <vector>
@@ -212,9 +212,9 @@ int main()
         cout << endl;
     return 0;
 }
-'''
+```
 # 3.23（p99）
-'''
+```
 #include <iostream>
 #include <vector>
 #include<cctype>
@@ -235,9 +235,9 @@ int main()
 	}
 	return 0;
 }
-'''
+```
 # 6.20（p188）
-'''
+```
 void exchange(int *q,int *p)
 {
   int t;
@@ -249,28 +249,28 @@ int n,m;
 cin>>n>>m;
 exchange(&n,&m);
 cout<<"n="<<n<<"m="<<m;
-'''
+```
 # 6.19(p193)
 
-(b)合理；
-(a)不合理:括号中参数只有一个，而调用时却出现两个数值；
-(c)不合理:参数类型为double，而调用时却为整型；
-(d)不合理:参数第三项为int，调用时却为浮点型；
+(b)合理；    
+(a)不合理:括号中参数只有一个，而调用时却出现两个数值；    
+(c)不合理:参数类型为double，而调用时却为整型；     
+(d)不合理:参数第三项为int，调用时却为浮点型；   
 6.39（p210）
 
-(a)：第二条声明是为计算两个整型常量。不合法，因为无法和第一条进行区分；
-(b)：第二条声明为得到double类型的get()函数。不合法，因为不能使用不同的返回值类型对函数进行重载；
-(c)：重置一个double类型的变量。合法。
+(a)：第二条声明是为计算两个整型常量。不合法，因为无法和第一条进行区分；		
+(b)：第二条声明为得到double类型的get()函数。不合法，因为不能使用不同的返回值类型对函数进行重载；		
+(c)：重置一个double类型的变量。合法。		
 7.16（p241）
 
-1.在类的定义中对于访问说明符出现的位置和次数没有限定；
+1.在类的定义中对于访问说明符出现的位置和次数没有限定；	
 2.///
-3.定义在public说明符之后-构造函数和一部分成员函数，public成员定义类的接口；
-4.定义在private说明符之后的成员可以被类的成员函数访问，但不能被使用该类的代码访问，private部分隐藏类的实现细节。
+3.定义在public说明符之后-构造函数和一部分成员函数，public成员定义类的接口；		
+4.定义在private说明符之后的成员可以被类的成员函数访问，但不能被使用该类的代码访问，private部分隐藏类的实现细节。		
 # 7.27（p249）
 
 代码：
-'''
+```
 #include <iostream>
 #include <string>
 
@@ -347,14 +347,14 @@ int main()
     cout << "\n";  
     return 0;
 }
-'''
+```
 # 7.49（p266）
 
-(a).临时变量作用，调用后，丢弃s的值，i.combine()的结果保存到combine的返回值中；
-(b).调用后，s发生改变，i.combine（）结果给返回值；
-(c).s是const Sales_data&的，调用后，s值不发生改变,i.combine()的结果给返回值。
+(a).临时变量作用，调用后，丢弃s的值，i.combine()的结果保存到combine的返回值中；		
+(b).调用后，s发生改变，i.combine（）结果给返回值；		
+(c).s是const Sales_data&的，调用后，s值不发生改变,i.combine()的结果给返回值。		
 # 7.58（p272）
-'''
+```
 //example.h
 class Example{
 public:
@@ -368,5 +368,5 @@ static vector<double> vec(vecSize);//❌-改为static vector<double> vec；
 #include “example.h”
 Double Example::rate;//❌-改为Example::rate;
 Vector<double> Example::vec;//❌-改为Example::vec;	
-'''
-在类的内部，rate和vec的初始化是错误的，因为除了静态常量成员之外，其他静态成员不能在类的内部初始化。另外，example.c文件的两条语句也是错误的，在这里必须给出静态成员的初始值
+```
+在类的内部，rate和vec的初始化是错误的，因为除了静态常量成员之外，其他静态成员不能在类的内部初始化。另外，example.c文件的两条语句也是错误的，在这里必须给出静态成员的初始值		
