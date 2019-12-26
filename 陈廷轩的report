@@ -1,8 +1,10 @@
 ## 前期配置nebual 
 
 ## 上传时碰到的困难
+git commit 时候失败
 
-![TIM图片20191227015202.png](https://i.loli.net/2019/12/27/RkDMbFs8XyNiKxe.png)
+发现是文件的格式不对，在文件的开头添加copyright...后解决问题
+![](https://i.loli.net/2019/12/27/RkDMbFs8XyNiKxe.png)
 
 # 总结
 第一次弄github,第一次在上面发代码，第一次学会使用git的命令，说实话，真的是万事开头难，以开始为了配置nebula环境也用了许久
