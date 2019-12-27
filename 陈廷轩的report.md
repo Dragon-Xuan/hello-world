@@ -34,6 +34,39 @@ git push --set-upstream origin change
 ## 修改thread下的单元测试
 ![](https://github.com/ctx0509/hello-world/blob/master/image/image.png)
 第一次试着使用了gtest下的断言的宏ASSERT_NE（）来判断线程是否拿到了相同的name
+
+### 在thread_test下添加了一段TEST
+```
++#include "iostream"
+ #include "base/Base.h"
+ #include <gtest/gtest.h>
+ #include "thread/NamedThread.h"
+-
++#include "vector"
+ namespace nebula {
+ namespace thread {
+
+@@ -25,6 +25,20 @@ TEST(NamedThread, ThreadName) {
+ TEST(NamedThread, ThreadID) {
+     ASSERT_EQ(::getpid(), nebula::thread::gettid());
+ }
++TEST(NameThread,test){
++   static j=0;
++   std::vector <std::thread>t;
++   for (int i=0;i<10;i++)
++   {
++     std::thread mythread(j++);
++     t.push_back(std::move(mythread));
++   }
+
++   for (int i=0;i<10;i++)
++{
++   t[i].join();
++}
++     ASSERT_GE(j,10);
++}
+```
+使用多线程（没用锁）来测试
 # 总结
 第一次弄github,第一次在上面发代码，第一次学会使用git的命令，说实话，真的是万事开头难，以开始为了配置nebula环境也用了许久
 花了很多时间，但是总是在做无用功，很难受，自己毫无方向，博客也不能即使解决我的问题，还好最后有老师来修车
