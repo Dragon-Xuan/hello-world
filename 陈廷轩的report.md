@@ -7,6 +7,29 @@ git commit 时候失败
 发现是文件的格式不对，在文件的开头添加copyright...后解决问题  
 问题解决之后出现以下界面
 ![Image text](https://github.com/ctx0509/hello-world/blob/master/image/TIM%E5%9B%BE%E7%89%8720191227015218.png)
+## 在使用git命令时
+### 第一步：查看远程仓库和上游
+```
+git remote -v 
+git remote rm orign
+git remote add orign https://github.com/ctx0509/nebula.git
+```
+![](https://github.com/ctx0509/hello-world/blob/master/image/image.png)
+### 第二步：创建分支
+```
+git branch change//创建一个分支--change
+git checkout change//切换到change分支
+```
+### 第三步：添加修改的文件到暂存区
+
+```
+git add .
+git commit -m "first change"
+```
+### 第四步：上传代码
+```
+git push --set-upstream origin change
+```
 # 总结
 第一次弄github,第一次在上面发代码，第一次学会使用git的命令，说实话，真的是万事开头难，以开始为了配置nebula环境也用了许久
 花了很多时间，但是总是在做无用功，很难受，自己毫无方向，博客也不能即使解决我的问题，还好最后有老师来修车
