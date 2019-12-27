@@ -1,12 +1,11 @@
-## 前期配置nebual 
-
+## 前期配置nebula
+nebula 的前期配置按照手册上的操作上来，主要时下载依赖的时候耗时比较长，安装依赖解包的时候千万要耐心，不要打断进程，更不要ctrl+c，这会导致前功尽弃
+总的来说，按照手册上的操作以及一些博客上的内容还能够完成。
 ## 上传时碰到的困难
 git commit 时候失败
-
-发现是文件的格式不对，在文件的开头添加copyright...后解决问题  
-
 ![Image text](https://github.com/ctx0509/hello-world/blob/master/image/TIM%E5%9B%BE%E7%89%8720191227015202.png?raw=true)
-
+发现是文件的格式不对，在文件的开头添加copyright...后解决问题  
+问题解决之后出现以下界面
 ![Image text](https://github.com/ctx0509/hello-world/blob/master/image/TIM%E5%9B%BE%E7%89%8720191227015218.png)
 # 总结
 第一次弄github,第一次在上面发代码，第一次学会使用git的命令，说实话，真的是万事开头难，以开始为了配置nebula环境也用了许久
