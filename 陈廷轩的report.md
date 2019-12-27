@@ -51,7 +51,7 @@ git push --set-upstream origin change
      ASSERT_EQ(::getpid(), nebula::thread::gettid());
  }
 +TEST(NameThread,test){
-+   static j=0;
++   static int j=0;
 +   std::vector <std::thread>t;
 +   for (int i=0;i<10;i++)
 +   {
