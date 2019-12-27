@@ -14,7 +14,7 @@ git remote -v
 git remote rm orign
 git remote add orign https://github.com/ctx0509/nebula.git
 ```
-![](https://github.com/ctx0509/hello-world/blob/master/image/image.png)
+
 ### 第二步：创建分支
 ```
 git branch change//创建一个分支--change
@@ -30,6 +30,10 @@ git commit -m "first change"
 ```
 git push --set-upstream origin change
 ```
+
+## 修改thread下的单元测试
+![](https://github.com/ctx0509/hello-world/blob/master/image/image.png)
+第一次试着使用了gtest下的断言的宏ASSERT_NE（）来判断线程是否拿到了相同的name
 # 总结
 第一次弄github,第一次在上面发代码，第一次学会使用git的命令，说实话，真的是万事开头难，以开始为了配置nebula环境也用了许久
 花了很多时间，但是总是在做无用功，很难受，自己毫无方向，博客也不能即使解决我的问题，还好最后有老师来修车
