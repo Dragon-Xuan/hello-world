@@ -77,6 +77,8 @@ git push --set-upstream origin change
 ![](https://github.com/ctx0509/hello-world/blob/master/image/2.png)
 运行结果如下
 ![](https://github.com/ctx0509/hello-world/blob/master/image/4.png)
+添加的test如下
+![](https://github.com/ctx0509/hello-world/blob/master/image/3.png)
 # 总结
 第一次弄github,第一次在上面发代码，第一次学会使用git的命令，说实话，真的是万事开头难，以开始为了配置nebula环境也用了许久
 花了很多时间，但是总是在做无用功，很难受，自己毫无方向，博客也不能即使解决我的问题，还好最后有老师来修车
